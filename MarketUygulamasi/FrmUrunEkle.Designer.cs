@@ -48,6 +48,7 @@
             btnAtistirmalik = new Button();
             btnTemizlik = new Button();
             btnBebek = new Button();
+            lblKategoriID = new Label();
             SuspendLayout();
             // 
             // label1
@@ -156,6 +157,7 @@
             btnUrunEkle.TabIndex = 12;
             btnUrunEkle.Text = "Ürün Ekle ";
             btnUrunEkle.UseVisualStyleBackColor = true;
+            btnUrunEkle.Click += btnUrunEkle_Click;
             // 
             // btnSebzeMeyve
             // 
@@ -166,6 +168,7 @@
             btnSebzeMeyve.Size = new Size(165, 133);
             btnSebzeMeyve.TabIndex = 13;
             btnSebzeMeyve.UseVisualStyleBackColor = true;
+            btnSebzeMeyve.Click += btnSebzeMeyve_Click;
             // 
             // btnUnluMamuller
             // 
@@ -176,6 +179,7 @@
             btnUnluMamuller.Size = new Size(165, 133);
             btnUnluMamuller.TabIndex = 14;
             btnUnluMamuller.UseVisualStyleBackColor = true;
+            btnUnluMamuller.Click += btnUnluMamuller_Click;
             // 
             // btnIcecek
             // 
@@ -186,6 +190,7 @@
             btnIcecek.Size = new Size(165, 133);
             btnIcecek.TabIndex = 15;
             btnIcecek.UseVisualStyleBackColor = false;
+            btnIcecek.Click += btnIcecek_Click;
             // 
             // btnAtistirmalik
             // 
@@ -196,6 +201,7 @@
             btnAtistirmalik.Size = new Size(165, 133);
             btnAtistirmalik.TabIndex = 18;
             btnAtistirmalik.UseVisualStyleBackColor = false;
+            btnAtistirmalik.Click += btnAtistirmalik_Click;
             // 
             // btnTemizlik
             // 
@@ -206,6 +212,7 @@
             btnTemizlik.Size = new Size(165, 133);
             btnTemizlik.TabIndex = 17;
             btnTemizlik.UseVisualStyleBackColor = false;
+            btnTemizlik.Click += btnTemizlik_Click;
             // 
             // btnBebek
             // 
@@ -216,6 +223,16 @@
             btnBebek.Size = new Size(165, 133);
             btnBebek.TabIndex = 16;
             btnBebek.UseVisualStyleBackColor = false;
+            btnBebek.Click += btnBebek_Click;
+            // 
+            // lblKategoriID
+            // 
+            lblKategoriID.AutoSize = true;
+            lblKategoriID.Location = new Point(852, 582);
+            lblKategoriID.Name = "lblKategoriID";
+            lblKategoriID.Size = new Size(149, 32);
+            lblKategoriID.TabIndex = 19;
+            lblKategoriID.Text = "lblKategoriId";
             // 
             // FrmUrunEkle
             // 
@@ -224,6 +241,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1071, 752);
+            Controls.Add(lblKategoriID);
             Controls.Add(btnAtistirmalik);
             Controls.Add(btnTemizlik);
             Controls.Add(btnBebek);
@@ -276,5 +294,6 @@
         private Button btnAtistirmalik;
         private Button btnTemizlik;
         private Button btnBebek;
+        private Label lblKategoriID;
     }
 }
