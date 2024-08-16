@@ -91,18 +91,37 @@ namespace MarketUygulamasi
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlCommand komut2 = new SqlCommand("insert into TBLURUN (URUNAD,MARKAAD,KATEGORIID,URUNBARKOD,URUNSTOK,URUNFIYAT) values(@p1,@p2,@p3,@p4,@p5,@p6)",baglanti);
-            komut2.Parameters.AddWithValue("@p1",txtAd.Text);
-            komut2.Parameters.AddWithValue("@p2",comboBoxMarka.SelectedItem.ToString());
-            komut2.Parameters.AddWithValue("@p3",lblKategoriID.Text);
-            komut2.Parameters.AddWithValue("@p4",txtBarkod.Text);
-            komut2.Parameters.AddWithValue("@p5",txtStok.Text);
-            komut2.Parameters.AddWithValue("@p6",txtFiyat.Text);
+            SqlCommand komut2 = new SqlCommand("insert into TBLURUN (URUNAD,MARKAAD,KATEGORIID,URUNBARKOD,URUNSTOK,URUNFIYAT) values(@p1,@p2,@p3,@p4,@p5,@p6)", baglanti);
+            komut2.Parameters.AddWithValue("@p1", txtAd.Text);
+            komut2.Parameters.AddWithValue("@p2", comboBoxMarka.SelectedItem.ToString());
+            komut2.Parameters.AddWithValue("@p3", lblKategoriID.Text);
+            komut2.Parameters.AddWithValue("@p4", txtBarkod.Text);
+            komut2.Parameters.AddWithValue("@p5", txtStok.Text);
+            komut2.Parameters.AddWithValue("@p6", txtFiyat.Text);
 
             komut2.ExecuteNonQuery();
             MessageBox.Show("Ürün veritabanına başarıyla kaydedildi.");
             baglanti.Close();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmAnaSayfa fr = new FrmAnaSayfa();
+            fr.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmUrunListesi fr = new FrmUrunListesi();
+            fr.Show();
+            this.Close();
         }
     }
 }

@@ -49,6 +49,13 @@
             btnTemizlik = new Button();
             btnBebek = new Button();
             lblKategoriID = new Label();
+            panel1 = new Panel();
+            button1 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -163,7 +170,7 @@
             // 
             btnSebzeMeyve.BackgroundImage = (Image)resources.GetObject("btnSebzeMeyve.BackgroundImage");
             btnSebzeMeyve.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSebzeMeyve.Location = new Point(852, 108);
+            btnSebzeMeyve.Location = new Point(846, 108);
             btnSebzeMeyve.Name = "btnSebzeMeyve";
             btnSebzeMeyve.Size = new Size(165, 133);
             btnSebzeMeyve.TabIndex = 13;
@@ -174,7 +181,7 @@
             // 
             btnUnluMamuller.BackgroundImage = (Image)resources.GetObject("btnUnluMamuller.BackgroundImage");
             btnUnluMamuller.BackgroundImageLayout = ImageLayout.Stretch;
-            btnUnluMamuller.Location = new Point(630, 259);
+            btnUnluMamuller.Location = new Point(624, 259);
             btnUnluMamuller.Name = "btnUnluMamuller";
             btnUnluMamuller.Size = new Size(165, 133);
             btnUnluMamuller.TabIndex = 14;
@@ -185,7 +192,7 @@
             // 
             btnIcecek.BackgroundImage = (Image)resources.GetObject("btnIcecek.BackgroundImage");
             btnIcecek.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIcecek.Location = new Point(630, 407);
+            btnIcecek.Location = new Point(624, 407);
             btnIcecek.Name = "btnIcecek";
             btnIcecek.Size = new Size(165, 133);
             btnIcecek.TabIndex = 15;
@@ -196,7 +203,7 @@
             // 
             btnAtistirmalik.BackgroundImage = (Image)resources.GetObject("btnAtistirmalik.BackgroundImage");
             btnAtistirmalik.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAtistirmalik.Location = new Point(852, 407);
+            btnAtistirmalik.Location = new Point(846, 407);
             btnAtistirmalik.Name = "btnAtistirmalik";
             btnAtistirmalik.Size = new Size(165, 133);
             btnAtistirmalik.TabIndex = 18;
@@ -207,7 +214,7 @@
             // 
             btnTemizlik.BackgroundImage = (Image)resources.GetObject("btnTemizlik.BackgroundImage");
             btnTemizlik.BackgroundImageLayout = ImageLayout.Stretch;
-            btnTemizlik.Location = new Point(852, 259);
+            btnTemizlik.Location = new Point(846, 259);
             btnTemizlik.Name = "btnTemizlik";
             btnTemizlik.Size = new Size(165, 133);
             btnTemizlik.TabIndex = 17;
@@ -218,7 +225,7 @@
             // 
             btnBebek.BackgroundImage = (Image)resources.GetObject("btnBebek.BackgroundImage");
             btnBebek.BackgroundImageLayout = ImageLayout.Stretch;
-            btnBebek.Location = new Point(630, 108);
+            btnBebek.Location = new Point(624, 108);
             btnBebek.Name = "btnBebek";
             btnBebek.Size = new Size(165, 133);
             btnBebek.TabIndex = 16;
@@ -234,6 +241,67 @@
             lblKategoriID.TabIndex = 19;
             lblKategoriID.Text = "lblKategoriId";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Location = new Point(870, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(147, 47);
+            panel1.TabIndex = 44;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Location = new Point(50, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(46, 41);
+            button1.TabIndex = 2;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Location = new Point(98, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(46, 41);
+            button3.TabIndex = 1;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(3, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(45, 41);
+            button2.TabIndex = 0;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(85, 45);
+            label7.Name = "label7";
+            label7.Size = new Size(152, 32);
+            label7.TabIndex = 45;
+            label7.Text = "Ürün Bilgileri";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(570, 45);
+            label8.Name = "label8";
+            label8.Size = new Size(130, 32);
+            label8.TabIndex = 46;
+            label8.Text = "Kategoriler";
+            // 
             // FrmUrunEkle
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -241,6 +309,9 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1071, 752);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(panel1);
             Controls.Add(lblKategoriID);
             Controls.Add(btnAtistirmalik);
             Controls.Add(btnTemizlik);
@@ -269,6 +340,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmUrunEkle";
             Load += FrmUrunEkle_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,5 +367,11 @@
         private Button btnTemizlik;
         private Button btnBebek;
         private Label lblKategoriID;
+        private Panel panel1;
+        private Button button3;
+        private Button button2;
+        private Label label7;
+        private Label label8;
+        private Button button1;
     }
 }
