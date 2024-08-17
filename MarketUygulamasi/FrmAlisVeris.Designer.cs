@@ -50,14 +50,23 @@
             lblToplam = new Label();
             btnHesapla = new Button();
             btnOde = new Button();
+            panel1 = new Panel();
+            btnSepet = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            groupBox2 = new GroupBox();
+            btnSepeteEkle = new Button();
+            lstSepet = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1005, 25);
+            pictureBox1.Location = new Point(996, 74);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(209, 180);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -68,7 +77,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(1048, 220);
+            label1.Location = new Point(1039, 269);
             label1.Name = "label1";
             label1.Size = new Size(123, 27);
             label1.TabIndex = 7;
@@ -89,7 +98,7 @@
             txtBarkod.Name = "txtBarkod";
             txtBarkod.Size = new Size(185, 39);
             txtBarkod.TabIndex = 0;
-            txtBarkod.Leave += txtBarkod_Leave;
+            txtBarkod.KeyDown += txtBarkod_KeyDown;
             // 
             // groupBox1
             // 
@@ -228,11 +237,13 @@
             // lblToplam
             // 
             lblToplam.AutoSize = true;
+            lblToplam.Enabled = false;
             lblToplam.Location = new Point(244, 216);
             lblToplam.Name = "lblToplam";
             lblToplam.Size = new Size(161, 32);
             lblToplam.TabIndex = 14;
             lblToplam.Text = "Toplam Tutar ";
+            lblToplam.Visible = false;
             // 
             // btnHesapla
             // 
@@ -246,13 +257,87 @@
             // 
             // btnOde
             // 
-            btnOde.Location = new Point(432, 598);
+            btnOde.Location = new Point(187, 300);
             btnOde.Name = "btnOde";
-            btnOde.Size = new Size(215, 39);
+            btnOde.Size = new Size(185, 39);
             btnOde.TabIndex = 16;
             btnOde.Text = "Öde";
             btnOde.UseVisualStyleBackColor = true;
             btnOde.Click += btnOde_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnSepet);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Location = new Point(1049, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(156, 47);
+            panel1.TabIndex = 45;
+            // 
+            // btnSepet
+            // 
+            btnSepet.BackgroundImage = (Image)resources.GetObject("btnSepet.BackgroundImage");
+            btnSepet.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSepet.Location = new Point(54, 3);
+            btnSepet.Name = "btnSepet";
+            btnSepet.Size = new Size(46, 41);
+            btnSepet.TabIndex = 2;
+            btnSepet.UseVisualStyleBackColor = false;
+            btnSepet.Click += btnSepet_Click;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Location = new Point(106, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(46, 41);
+            button3.TabIndex = 1;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(3, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(45, 41);
+            button2.TabIndex = 0;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(lstSepet);
+            groupBox2.Controls.Add(btnOde);
+            groupBox2.Location = new Point(771, 292);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(378, 345);
+            groupBox2.TabIndex = 46;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Sepet Bilgileri";
+            groupBox2.Visible = false;
+            // 
+            // btnSepeteEkle
+            // 
+            btnSepeteEkle.Location = new Point(436, 598);
+            btnSepeteEkle.Name = "btnSepeteEkle";
+            btnSepeteEkle.Size = new Size(215, 39);
+            btnSepeteEkle.TabIndex = 47;
+            btnSepeteEkle.Text = "Sepete Ekle";
+            btnSepeteEkle.UseVisualStyleBackColor = true;
+            btnSepeteEkle.Click += btnSepeteEkle_Click;
+            // 
+            // lstSepet
+            // 
+            lstSepet.FormattingEnabled = true;
+            lstSepet.ItemHeight = 32;
+            lstSepet.Location = new Point(54, 53);
+            lstSepet.Name = "lstSepet";
+            lstSepet.Size = new Size(272, 196);
+            lstSepet.TabIndex = 17;
             // 
             // FrmAlisVeris
             // 
@@ -260,7 +345,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
             ClientSize = new Size(1238, 738);
-            Controls.Add(btnOde);
+            Controls.Add(btnSepeteEkle);
+            Controls.Add(groupBox2);
+            Controls.Add(panel1);
             Controls.Add(btnHesapla);
             Controls.Add(lblToplam);
             Controls.Add(txtAdet);
@@ -279,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,5 +395,12 @@
         private Label lblToplam;
         private Button btnHesapla;
         private Button btnOde;
+        private Panel panel1;
+        private Button button3;
+        private Button button2;
+        private Button btnSepet;
+        private GroupBox groupBox2;
+        private Button btnSepeteEkle;
+        private ListBox lstSepet;
     }
 }

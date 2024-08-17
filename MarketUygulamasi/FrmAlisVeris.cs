@@ -16,6 +16,9 @@ namespace MarketUygulamasi
 {
     public partial class FrmAlisVeris : Form
     {
+
+        private List<Product> sepet = new List<Product>();
+
         public FrmAlisVeris()
         {
             InitializeComponent();
@@ -39,9 +42,6 @@ namespace MarketUygulamasi
             }
 
             baglanti.Close();
-
-
-
         }
 
         private void FrmAlisVeris_Load(object sender, EventArgs e)
@@ -57,20 +57,117 @@ namespace MarketUygulamasi
 
         private void btnHesapla_Click(object sender, EventArgs e)
         {
-            lblToplam.Text = (Convert.ToInt32(txtAdet.Text) * (Convert.ToDecimal(lblBirimFiyat.Text))).ToString();
+            lblToplam.Text = (Convert.ToInt32(txtAdet.Text) *Convert.ToDecimal(lblBirimFiyat.Text)).ToString();
+            lblToplam.Visible = true;
+        }
+
+        public void Temizle()
+        {
+            txtBarkod.Clear();
+            lstSepet.Items.Clear();
+            txtAdet.Clear();
+            lblAd.Text = "";
+            lblBirimFiyat.Text = "";
+            lblKategori.Text = "";
+            lblMarka.Text = "";
+            lblToplam.Visible=false;
+            lblGuncelStok.Text = "";
+            lblBirimFiyat.Text = "";
+
         }
 
         private void btnOde_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("update TBLURUN set URUNSTOK=@p1 where URUNBARKOD=@pbarkod",baglanti);
-            komut.Parameters.AddWithValue("@pbarkod",txtBarkod.Text);
-            komut.Parameters.AddWithValue("@p1", Convert.ToInt32(lblGuncelStok.Text) - Convert.ToInt32(txtAdet.Text));
 
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-            MessageBox.Show("Ürün Stok bilgisi güncellendi");
+            // Her ürün için stok güncelleme işlemi yapıyoruz.
+            foreach (var urun in sepet)
+            {
+                // Mevcut stok bilgisini alıyoruz.
+                SqlCommand komut = new SqlCommand("SELECT URUNSTOK FROM TBLURUN WHERE URUNAD = @p1", baglanti);
+                komut.Parameters.AddWithValue("@p1", urun.UrunAd);
 
+                object result = komut.ExecuteScalar();
+                int mevcutStok = Convert.ToInt32(result);
+
+                // Stok güncelleme sorgusunu oluşturuyoruz.
+                SqlCommand guncelleKomut = new SqlCommand("UPDATE TBLURUN SET URUNSTOK = @p1 WHERE URUNAD = @p2", baglanti);
+                guncelleKomut.Parameters.AddWithValue("@p1", mevcutStok - urun.Adet);
+                guncelleKomut.Parameters.AddWithValue("@p2", urun.UrunAd);
+
+                guncelleKomut.ExecuteNonQuery();
+                baglanti.Close();
+                
+            }
+
+            // Sepeti sıfırlıyoruz.
+            sepet.Clear();
+            lstSepet.Visible=false;
+            MessageBox.Show("Ödeme işlemi gerçekleştirildi ve sepet sıfırlandı.");
+            Temizle();
+
+        }
+
+        private void txtBarkod_DragEnter(object sender, DragEventArgs e)
+        {
+            BilgileriGoster();
+        }
+
+        private void txtBarkod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BilgileriGoster();
+                // Olayın daha fazla işlenmesini engellemek için
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmAnaSayfa fr = new FrmAnaSayfa();
+            fr.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GüncelleSepetGoruntuleme()
+        {
+            lstSepet.Items.Clear(); // Mevcut öğeleri temizleyin
+
+            foreach (var urun in sepet)
+            {
+                // Ürün adı ve adedi birleştirilmiş olarak listeye eklenir
+                lstSepet.Items.Add($"{urun.UrunAd} - Adet: {urun.Adet}");
+            }
+        }
+
+
+        private void btnSepeteEkle_Click(object sender, EventArgs e)
+        {
+            string urunAd = lblAd.Text;
+            int adet;
+
+            if (int.TryParse(txtAdet.Text, out adet) && !string.IsNullOrEmpty(urunAd))
+            {
+                sepet.Add(new Product { UrunAd = urunAd, Adet = adet });
+                MessageBox.Show("Ürün sepete eklendi.");
+                GüncelleSepetGoruntuleme(); // Sepet görünümünü güncelle
+            }
+            else
+            {
+                MessageBox.Show("Geçerli bir adet ve ürün adı giriniz.");
+            }
+        }
+
+        private void btnSepet_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+            GüncelleSepetGoruntuleme();
         }
     }
 }
