@@ -95,6 +95,7 @@
             btnAlisVeris.Size = new Size(177, 175);
             btnAlisVeris.TabIndex = 5;
             btnAlisVeris.UseVisualStyleBackColor = false;
+            btnAlisVeris.Click += btnAlisVeris_Click;
             // 
             // btnCikis
             // 

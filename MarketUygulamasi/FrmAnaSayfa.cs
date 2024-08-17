@@ -16,9 +16,16 @@ namespace MarketUygulamasi
 
         private void btnMarka_Click(object sender, EventArgs e)
         {
-            FrmMarkalar fr=new FrmMarkalar();
+            FrmMarkalar fr = new FrmMarkalar();
             fr.Show();
             this.Hide();
+        }
+
+        private void btnAlisVeris_Click(object sender, EventArgs e)
+        {
+            FrmAlisVeris fr=new FrmAlisVeris();
+            fr.Show();
+            this.Hide();    
         }
     }
 }
