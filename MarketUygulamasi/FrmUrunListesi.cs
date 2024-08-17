@@ -96,7 +96,7 @@ namespace MarketUygulamasi
 
             komut2.ExecuteNonQuery();
             baglanti.Close();
-            MessageBox.Show("Ürün veritabanından başarılı bir şekilde silindi.");
+            MessageBox.Show("Ürün  başarılı bir şekilde güncellendi.");
             VerileriGoster();
         }
 

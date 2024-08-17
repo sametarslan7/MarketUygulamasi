@@ -4,6 +4,9 @@
     <Compile Update="FrmAnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmMarkalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmUrunEkle.cs">
       <SubType>Form</SubType>
     </Compile>

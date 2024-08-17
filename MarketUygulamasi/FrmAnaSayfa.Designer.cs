@@ -32,14 +32,12 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             btnUrun = new Button();
-            btnKategori = new Button();
             btnMarka = new Button();
             btnAlisVeris = new Button();
             btnCikis = new Button();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -75,34 +73,24 @@
             btnUrun.UseVisualStyleBackColor = false;
             btnUrun.Click += btnUrun_Click;
             // 
-            // btnKategori
-            // 
-            btnKategori.BackColor = Color.CornflowerBlue;
-            btnKategori.BackgroundImage = (Image)resources.GetObject("btnKategori.BackgroundImage");
-            btnKategori.BackgroundImageLayout = ImageLayout.Stretch;
-            btnKategori.Location = new Point(312, 329);
-            btnKategori.Name = "btnKategori";
-            btnKategori.Size = new Size(177, 175);
-            btnKategori.TabIndex = 3;
-            btnKategori.UseVisualStyleBackColor = false;
-            // 
             // btnMarka
             // 
             btnMarka.BackColor = Color.Khaki;
             btnMarka.BackgroundImage = (Image)resources.GetObject("btnMarka.BackgroundImage");
             btnMarka.BackgroundImageLayout = ImageLayout.Stretch;
-            btnMarka.Location = new Point(562, 329);
+            btnMarka.Location = new Point(443, 329);
             btnMarka.Name = "btnMarka";
             btnMarka.Size = new Size(177, 175);
             btnMarka.TabIndex = 4;
             btnMarka.UseVisualStyleBackColor = false;
+            btnMarka.Click += btnMarka_Click;
             // 
             // btnAlisVeris
             // 
             btnAlisVeris.BackColor = Color.Orange;
             btnAlisVeris.BackgroundImage = (Image)resources.GetObject("btnAlisVeris.BackgroundImage");
             btnAlisVeris.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAlisVeris.Location = new Point(824, 329);
+            btnAlisVeris.Location = new Point(793, 329);
             btnAlisVeris.Name = "btnAlisVeris";
             btnAlisVeris.Size = new Size(177, 175);
             btnAlisVeris.TabIndex = 5;
@@ -128,32 +116,23 @@
             label2.TabIndex = 7;
             label2.Text = "Ürünler";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(334, 528);
-            label3.Name = "label3";
-            label3.Size = new Size(130, 32);
-            label3.TabIndex = 8;
-            label3.Text = "Kategoriler";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(593, 528);
-            label4.Name = "label4";
-            label4.Size = new Size(106, 32);
-            label4.TabIndex = 9;
-            label4.Text = "Markalar";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(863, 528);
+            label5.Location = new Point(832, 528);
             label5.Name = "label5";
             label5.Size = new Size(100, 32);
             label5.TabIndex = 10;
             label5.Text = "Alışveriş";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(443, 528);
+            label4.Name = "label4";
+            label4.Size = new Size(180, 32);
+            label4.TabIndex = 9;
+            label4.Text = "Marka Yönetimi";
             // 
             // FrmAnaSayfa
             // 
@@ -163,12 +142,10 @@
             ClientSize = new Size(1071, 752);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(btnCikis);
             Controls.Add(btnAlisVeris);
             Controls.Add(btnMarka);
-            Controls.Add(btnKategori);
             Controls.Add(btnUrun);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -189,13 +166,11 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Button btnUrun;
-        private Button btnKategori;
         private Button btnMarka;
         private Button btnAlisVeris;
         private Button btnCikis;
         private Label label2;
-        private Label label3;
-        private Label label4;
         private Label label5;
+        private Label label4;
     }
 }

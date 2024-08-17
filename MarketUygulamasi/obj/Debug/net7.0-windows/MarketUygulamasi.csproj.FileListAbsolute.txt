@@ -25,3 +25,4 @@ C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\bin\Debug\net7.0-windows
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.csproj.CopyComplete
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmUrunListesi.resources
+C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmMarkalar.resources
