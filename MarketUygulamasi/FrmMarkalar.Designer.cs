@@ -80,6 +80,8 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(595, 260);
             label1.Name = "label1";
             label1.Size = new Size(56, 32);
@@ -89,6 +91,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(595, 320);
             label2.Name = "label2";
             label2.Size = new Size(99, 32);
@@ -98,6 +102,8 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(595, 382);
             label3.Name = "label3";
             label3.Size = new Size(122, 32);
@@ -139,6 +145,7 @@
             // 
             // btnEkle
             // 
+            btnEkle.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnEkle.Location = new Point(546, 461);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(148, 42);
@@ -167,6 +174,8 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(595, 63);
             label4.Name = "label4";
             label4.Size = new Size(142, 32);
@@ -220,6 +229,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1205, 762);
             Controls.Add(panel1);
             Controls.Add(btnAra);

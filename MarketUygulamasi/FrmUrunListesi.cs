@@ -68,6 +68,18 @@ namespace MarketUygulamasi
 
         }
 
+        public void Temizle()
+        {
+            txtID.Text = "";
+            txtAd.Text = "";
+            comboBoxMarka.Text = "";
+            comboBox1Kategori.Text = "";
+            txtBarkod.Text = "";
+            txtStok.Text = "";
+            txtFiyat.Text = "";
+            
+        }
+
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             baglanti.Open();
@@ -98,6 +110,7 @@ namespace MarketUygulamasi
             baglanti.Close();
             MessageBox.Show("Ürün  başarılı bir şekilde güncellendi.");
             VerileriGoster();
+            Temizle();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -110,6 +123,7 @@ namespace MarketUygulamasi
             baglanti.Close();
             MessageBox.Show("Ürün veritabanından başarılı bir şekilde silindi.");
             VerileriGoster();
+            Temizle();
         }
 
         public void MarkalariGetir()
@@ -179,7 +193,7 @@ namespace MarketUygulamasi
             listView1.Items.Clear();
             baglanti.Open();
             SqlCommand komut = new SqlCommand("select TBLURUN.URUNID,TBLURUN.URUNAD,TBLURUN.MARKAAD,TBLKATEGORI.KATEGORIAD,TBLURUN.URUNBARKOD,TBLURUN.URUNSTOK,TBLURUN.URUNFIYAT from TBLURUN join TBLKATEGORI on TBLURUN.KATEGORIID=TBLKATEGORI.KATEGORIID where URUNBARKOD=@p1", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtAra.Text);
+            komut.Parameters.AddWithValue("@p1", txtAra.Text.Trim());
             SqlDataReader oku = komut.ExecuteReader();
 
             while (oku.Read())
@@ -196,6 +210,7 @@ namespace MarketUygulamasi
                 listView1.Items.Add(item);
             }
             baglanti.Close();
+            txtAra.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)

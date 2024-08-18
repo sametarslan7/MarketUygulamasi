@@ -75,6 +75,7 @@ namespace MarketUygulamasi
                 listView1.Items.Add(item);
             }
             baglanti.Close();
+            txtAra.Text = "";
         }
 
         int id = 0;
@@ -87,6 +88,13 @@ namespace MarketUygulamasi
 
         }
 
+        public void Temizle()
+        {
+            txtMarkaID.Text = "";
+            txtMarkaAd.Text = "";
+            comboBoxKategori.Text = "";
+        }
+
         private void btnSil_Click(object sender, EventArgs e)
         {
             baglanti.Open();
@@ -96,6 +104,7 @@ namespace MarketUygulamasi
             baglanti.Close();
             MessageBox.Show("Ürün veritabanından başarılı bir şekilde silindi.");
             MarkalarıGoster();
+            Temizle();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -107,6 +116,7 @@ namespace MarketUygulamasi
             komut.ExecuteNonQuery();
             baglanti.Close();
             MarkalarıGoster();
+            Temizle();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -122,6 +132,7 @@ namespace MarketUygulamasi
 
             MessageBox.Show("Marka başarılı bir şekilde güncellendi.");
             MarkalarıGoster();
+            Temizle();
         }
 
         private void button2_Click(object sender, EventArgs e)

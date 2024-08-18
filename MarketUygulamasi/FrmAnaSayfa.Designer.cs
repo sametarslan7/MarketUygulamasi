@@ -44,7 +44,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(359, 105);
             label1.Name = "label1";
             label1.Size = new Size(490, 27);
@@ -53,6 +55,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(32, 32);
             pictureBox1.Name = "pictureBox1";
@@ -99,7 +102,7 @@
             // 
             // btnCikis
             // 
-            btnCikis.BackColor = Color.OldLace;
+            btnCikis.BackColor = Color.Transparent;
             btnCikis.BackgroundImage = (Image)resources.GetObject("btnCikis.BackgroundImage");
             btnCikis.BackgroundImageLayout = ImageLayout.Stretch;
             btnCikis.Location = new Point(909, 642);
@@ -111,6 +114,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.Snow;
             label2.Location = new Point(106, 528);
             label2.Name = "label2";
             label2.Size = new Size(93, 32);
@@ -120,6 +125,8 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.ForeColor = Color.Snow;
             label5.Location = new Point(832, 528);
             label5.Name = "label5";
             label5.Size = new Size(100, 32);
@@ -129,6 +136,8 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.ForeColor = Color.Snow;
             label4.Location = new Point(443, 528);
             label4.Name = "label4";
             label4.Size = new Size(180, 32);
@@ -139,7 +148,10 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.LightSteelBlue;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1071, 752);
             Controls.Add(label5);
             Controls.Add(label4);

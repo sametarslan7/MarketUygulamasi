@@ -97,11 +97,18 @@ namespace MarketUygulamasi
             komut2.Parameters.AddWithValue("@p3", lblKategoriID.Text);
             komut2.Parameters.AddWithValue("@p4", txtBarkod.Text);
             komut2.Parameters.AddWithValue("@p5", txtStok.Text);
-            komut2.Parameters.AddWithValue("@p6", txtFiyat.Text);
+            komut2.Parameters.AddWithValue("@p6", Convert.ToDecimal(txtFiyat.Text));
 
             komut2.ExecuteNonQuery();
             MessageBox.Show("Ürün veritabanına başarıyla kaydedildi.");
             baglanti.Close();
+
+            txtAd.Text = "";
+            comboBoxMarka.Text = "";
+            txtKategori.Text="";
+            txtBarkod.Text = "";
+            txtStok.Text = "";
+            txtFiyat.Text = "";
 
         }
 

@@ -61,6 +61,8 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(35, 111);
             label1.Name = "label1";
             label1.Size = new Size(121, 32);
@@ -70,6 +72,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(35, 174);
             label2.Name = "label2";
             label2.Size = new Size(99, 32);
@@ -79,6 +83,8 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(35, 237);
             label3.Name = "label3";
             label3.Size = new Size(107, 32);
@@ -88,6 +94,8 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(35, 300);
             label4.Name = "label4";
             label4.Size = new Size(122, 32);
@@ -97,6 +105,8 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(35, 426);
             label5.Name = "label5";
             label5.Size = new Size(83, 32);
@@ -106,6 +116,8 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(35, 363);
             label6.Name = "label6";
             label6.Size = new Size(136, 32);
@@ -235,6 +247,8 @@
             // lblKategoriID
             // 
             lblKategoriID.AutoSize = true;
+            lblKategoriID.BackColor = Color.Transparent;
+            lblKategoriID.ForeColor = SystemColors.Control;
             lblKategoriID.Location = new Point(852, 582);
             lblKategoriID.Name = "lblKategoriID";
             lblKategoriID.Size = new Size(149, 32);
@@ -287,6 +301,8 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(85, 45);
             label7.Name = "label7";
             label7.Size = new Size(152, 32);
@@ -296,6 +312,8 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(570, 45);
             label8.Name = "label8";
             label8.Size = new Size(130, 32);
@@ -308,6 +326,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.LightSteelBlue;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1071, 752);
             Controls.Add(label8);
             Controls.Add(label7);

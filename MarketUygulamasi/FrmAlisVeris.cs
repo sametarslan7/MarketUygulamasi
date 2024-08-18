@@ -96,13 +96,14 @@ namespace MarketUygulamasi
                 guncelleKomut.Parameters.AddWithValue("@p2", urun.UrunAd);
 
                 guncelleKomut.ExecuteNonQuery();
-                baglanti.Close();
                 
             }
+            baglanti.Close();
 
             // Sepeti sıfırlıyoruz.
             sepet.Clear();
-            lstSepet.Visible=false;
+            groupBox2.Visible = false;
+            //lstSepet.Visible=false;
             MessageBox.Show("Ödeme işlemi gerçekleştirildi ve sepet sıfırlandı.");
             Temizle();
 
@@ -118,6 +119,7 @@ namespace MarketUygulamasi
             if (e.KeyCode == Keys.Enter)
             {
                 BilgileriGoster();
+               
                 // Olayın daha fazla işlenmesini engellemek için
                 e.SuppressKeyPress = true;
             }
@@ -157,6 +159,8 @@ namespace MarketUygulamasi
                 sepet.Add(new Product { UrunAd = urunAd, Adet = adet });
                 MessageBox.Show("Ürün sepete eklendi.");
                 GüncelleSepetGoruntuleme(); // Sepet görünümünü güncelle
+                Temizle();
+                
             }
             else
             {

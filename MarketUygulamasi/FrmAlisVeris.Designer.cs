@@ -55,8 +55,8 @@
             button3 = new Button();
             button2 = new Button();
             groupBox2 = new GroupBox();
-            btnSepeteEkle = new Button();
             lstSepet = new ListBox();
+            btnSepeteEkle = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(996, 74);
             pictureBox1.Name = "pictureBox1";
@@ -76,8 +77,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(1039, 269);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(1038, 262);
             label1.Name = "label1";
             label1.Size = new Size(123, 27);
             label1.TabIndex = 7;
@@ -86,6 +89,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(35, 74);
             label2.Name = "label2";
             label2.Size = new Size(274, 32);
@@ -102,6 +107,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(lblGuncelStok);
             groupBox1.Controls.Add(lblBirimFiyat);
             groupBox1.Controls.Add(lblMarka);
@@ -112,6 +118,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label8);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
             groupBox1.Location = new Point(35, 292);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(363, 345);
@@ -212,6 +219,8 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(35, 216);
             label7.Name = "label7";
             label7.Size = new Size(173, 32);
@@ -221,6 +230,8 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(35, 152);
             label9.Name = "label9";
             label9.Size = new Size(83, 32);
@@ -237,7 +248,9 @@
             // lblToplam
             // 
             lblToplam.AutoSize = true;
+            lblToplam.BackColor = Color.Transparent;
             lblToplam.Enabled = false;
+            lblToplam.ForeColor = SystemColors.ButtonHighlight;
             lblToplam.Location = new Point(244, 216);
             lblToplam.Name = "lblToplam";
             lblToplam.Size = new Size(161, 32);
@@ -257,6 +270,7 @@
             // 
             // btnOde
             // 
+            btnOde.ForeColor = Color.Black;
             btnOde.Location = new Point(187, 300);
             btnOde.Name = "btnOde";
             btnOde.Size = new Size(185, 39);
@@ -310,8 +324,11 @@
             // 
             // groupBox2
             // 
+            groupBox2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBox2.BackColor = Color.Transparent;
             groupBox2.Controls.Add(lstSepet);
             groupBox2.Controls.Add(btnOde);
+            groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(771, 292);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(378, 345);
@@ -319,6 +336,15 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Sepet Bilgileri";
             groupBox2.Visible = false;
+            // 
+            // lstSepet
+            // 
+            lstSepet.FormattingEnabled = true;
+            lstSepet.ItemHeight = 32;
+            lstSepet.Location = new Point(54, 53);
+            lstSepet.Name = "lstSepet";
+            lstSepet.Size = new Size(272, 196);
+            lstSepet.TabIndex = 17;
             // 
             // btnSepeteEkle
             // 
@@ -330,20 +356,14 @@
             btnSepeteEkle.UseVisualStyleBackColor = true;
             btnSepeteEkle.Click += btnSepeteEkle_Click;
             // 
-            // lstSepet
-            // 
-            lstSepet.FormattingEnabled = true;
-            lstSepet.ItemHeight = 32;
-            lstSepet.Location = new Point(54, 53);
-            lstSepet.Name = "lstSepet";
-            lstSepet.Size = new Size(272, 196);
-            lstSepet.TabIndex = 17;
-            // 
             // FrmAlisVeris
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.CadetBlue;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1238, 738);
             Controls.Add(btnSepeteEkle);
             Controls.Add(groupBox2);
@@ -360,7 +380,10 @@
             Controls.Add(pictureBox1);
             Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(6);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAlisVeris";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAlisVeris";
             Load += FrmAlisVeris_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
