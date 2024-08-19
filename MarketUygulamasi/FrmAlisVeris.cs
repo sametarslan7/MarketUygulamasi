@@ -76,38 +76,74 @@ namespace MarketUygulamasi
 
         }
 
+
         private void btnOde_Click(object sender, EventArgs e)
         {
             baglanti.Open();
+            decimal genelToplam = 0;
+            StringBuilder fis = new StringBuilder();
 
-            // Her ürün için stok güncelleme işlemi yapıyoruz.
+            fis.AppendLine("Alışveriş Fişi:");
+            fis.AppendLine("--------------------------");
+
             foreach (var urun in sepet)
             {
-                // Mevcut stok bilgisini alıyoruz.
-                SqlCommand komut = new SqlCommand("SELECT URUNSTOK FROM TBLURUN WHERE URUNAD = @p1", baglanti);
-                komut.Parameters.AddWithValue("@p1", urun.UrunAd);
+                // Ürün bilgilerini ve toplam tutarı hesaplayın
+                SqlCommand komutUrun = new SqlCommand("SELECT URUNFIYAT, MARKAAD FROM TBLURUN WHERE URUNAD = @p1", baglanti);
+                komutUrun.Parameters.AddWithValue("@p1", urun.UrunAd);
+                SqlDataReader oku = komutUrun.ExecuteReader();
 
-                object result = komut.ExecuteScalar();
-                int mevcutStok = Convert.ToInt32(result);
+                decimal urunFiyat = 0;
+                string markaAd = "";
+                if (oku.Read())
+                {
+                    urunFiyat = Convert.ToDecimal(oku["URUNFIYAT"]);
+                    markaAd = oku["MARKAAD"].ToString();
+                }
+                oku.Close();
 
-                // Stok güncelleme sorgusunu oluşturuyoruz.
-                SqlCommand guncelleKomut = new SqlCommand("UPDATE TBLURUN SET URUNSTOK = @p1 WHERE URUNAD = @p2", baglanti);
-                guncelleKomut.Parameters.AddWithValue("@p1", mevcutStok - urun.Adet);
+                decimal toplamTutar = urunFiyat * urun.Adet;
+                genelToplam += toplamTutar;
+                DateTime alisverisTarihi = DateTime.Now;
+
+                // Bilgileri TBLALISVERIS tablosuna ekleyin
+                SqlCommand ekleKomut = new SqlCommand("INSERT INTO TBLALISVERIS (URUNAD, MARKAAD, URUNADET, TOPLAMTUTAR, ALISVERISTARIH) VALUES (@p1, @p2, @p3, @p4, @p5)", baglanti);
+                ekleKomut.Parameters.AddWithValue("@p1", urun.UrunAd);
+                ekleKomut.Parameters.AddWithValue("@p2", markaAd);
+                ekleKomut.Parameters.AddWithValue("@p3", urun.Adet);
+                ekleKomut.Parameters.AddWithValue("@p4", toplamTutar);
+                ekleKomut.Parameters.AddWithValue("@p5", alisverisTarihi);
+
+                ekleKomut.ExecuteNonQuery();
+
+                // Mevcut stok bilgisini güncelleyin
+                SqlCommand guncelleKomut = new SqlCommand("UPDATE TBLURUN SET URUNSTOK = URUNSTOK - @p1 WHERE URUNAD = @p2", baglanti);
+                guncelleKomut.Parameters.AddWithValue("@p1", urun.Adet);
                 guncelleKomut.Parameters.AddWithValue("@p2", urun.UrunAd);
 
                 guncelleKomut.ExecuteNonQuery();
-                
+
+                // Fiş bilgilerini oluşturun
+                fis.AppendLine($"{urun.UrunAd} - Adet: {urun.Adet}, Tutar: {toplamTutar:C2}");
             }
+
             baglanti.Close();
 
-            // Sepeti sıfırlıyoruz.
+            fis.AppendLine("--------------------------");
+            fis.AppendLine($"Genel Toplam: {genelToplam:C2}");
+            fis.AppendLine($"Tarih: {DateTime.Now}");
+
+            // Fişi mesaj kutusunda göster
+            MessageBox.Show(fis.ToString(), "Alışveriş Fişi");
+
+            // Sepeti sıfırlayın
             sepet.Clear();
             groupBox2.Visible = false;
-            //lstSepet.Visible=false;
             MessageBox.Show("Ödeme işlemi gerçekleştirildi ve sepet sıfırlandı.");
             Temizle();
-
         }
+
+
 
         private void txtBarkod_DragEnter(object sender, DragEventArgs e)
         {
