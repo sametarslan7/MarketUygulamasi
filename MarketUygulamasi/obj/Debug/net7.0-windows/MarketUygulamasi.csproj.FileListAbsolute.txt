@@ -27,3 +27,5 @@ C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmUrunListesi.resources
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmMarkalar.resources
 C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmAlisVeris.resources
+C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmGirisPaneli.resources
+C:\Users\user\Desktop\MarketUygulamasi\MarketUygulamasi\obj\Debug\net7.0-windows\MarketUygulamasi.FrmKullaniciKayitPaneli.resources
