@@ -29,5 +29,7 @@
 
 ![alisveris_foto_2](https://github.com/user-attachments/assets/9c303c05-78d4-4c47-9ffe-2627e503ca7c)
 
-![alisveris_foto_3_yeni](https://github.com/user-attachments/assets/640e0018-2e95-4d94-b643-c047b1a69c87)     ![alisveris_foto_4](https://github.com/user-attachments/assets/238bf377-276d-4450-a24e-6c01cd9f15cd)
+![alisveris_foto_3_yeni](https://github.com/user-attachments/assets/640e0018-2e95-4d94-b643-c047b1a69c87) 
+
+![alisveris_foto_4](https://github.com/user-attachments/assets/238bf377-276d-4450-a24e-6c01cd9f15cd)
 
