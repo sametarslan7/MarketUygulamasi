@@ -19,7 +19,7 @@
 
 ![urun_ekle_foto](https://github.com/user-attachments/assets/79d694e8-7c9a-4d47-b5ec-abad7c562729)
 
-<h4>     -> Markalar : Kategorie göre yeni marka ekleme işlemini , olan markaları güncelleme , silme gibi işlemleri bu sayfada yapabilirsiniz.</h4>
+<h4>     -> Markalar : Kategoriye göre yeni marka ekleme işlemini , olan markaları güncelleme , silme gibi işlemleri bu sayfada yapabilirsiniz.</h4>
 
 ![markalar_foto](https://github.com/user-attachments/assets/87559f5b-dab8-4c68-a915-002eb543758b)
 
@@ -29,7 +29,5 @@
 
 ![alisveris_foto_2](https://github.com/user-attachments/assets/9c303c05-78d4-4c47-9ffe-2627e503ca7c)
 
-![alisveris_foto_3_yeni](https://github.com/user-attachments/assets/640e0018-2e95-4d94-b643-c047b1a69c87)
-
-![alisveris_foto_4](https://github.com/user-attachments/assets/238bf377-276d-4450-a24e-6c01cd9f15cd)
+![alisveris_foto_3_yeni](https://github.com/user-attachments/assets/640e0018-2e95-4d94-b643-c047b1a69c87)     ![alisveris_foto_4](https://github.com/user-attachments/assets/238bf377-276d-4450-a24e-6c01cd9f15cd)
 
