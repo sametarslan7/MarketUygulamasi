@@ -1,6 +1,35 @@
 <h1>MARKET UYGULAMASI</h1>
 <h3> - Bu otomasyon uygulamasında , bir süper marketin kasa ve ödeme işlemlerini gerçekleştirebileceği bir sistem amaçlandı.</h3>
 <h3> - Uygulamanın ön yüzünün tasarımı Windows Form ile yapıldı . Arka yüz işlemleri de C# ile kodlandı.</h3>
+<h2>Uygulama Kullanımı için Gereksinimler</h2>
+
+<h4> Uygulamanın veir tabanı işlemleri için aşağıdaki tabloları SQL SERVER MANGEMENT STUDIO'da oluşturmanız gerekiyor.</h4>
+USE [DB_MARKET]
+GO
+
+/****** Object:  Table [dbo].[TBLALISVERIS]    Script Date: 22.08.2024 16:40:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TBLALISVERIS](
+	[ALISVERISID] [int] IDENTITY(1,1) NOT NULL,
+	[URUNAD] [varchar](100) NULL,
+	[MARKAAD] [varchar](100) NULL,
+	[URUNADET] [tinyint] NULL,
+	[TOPLAMTUTAR] [decimal](18, 2) NULL,
+	[ALISVERISTARIH] [date] NULL,
+ CONSTRAINT [PK_TBLALISVERIS] PRIMARY KEY CLUSTERED 
+(
+	[ALISVERISID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
 <h2> Uygulama Kullanım Kılavuzu </h2>
 <h3> -> Uygulamayı başlatınca direkt giriş sayfasıyla karşılaşacaksınız.Eğer sisteme kayıtlıysanız direkt kullanıcı adı ve şifre ile giriş yapabilirsiniz. </h3>
 
