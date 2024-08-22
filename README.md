@@ -3,7 +3,7 @@
 <h3> - Uygulamanın ön yüzünün tasarımı Windows Form ile yapıldı . Arka yüz işlemleri de C# ile kodlandı.</h3>
 <h2>Uygulama Kullanımı için Gereksinimler</h2>
 
-<h4> Uygulamanın veir tabanı işlemleri için aşağıdaki tabloları SQL SERVER MANGEMENT STUDIO'da oluşturmanız gerekiyor.</h4>
+<h4> Uygulamanın veir tabanı işlemleri için aşağıdaki tabloları SQL SERVER MANGEMENT STUDIO'da oluşturmanız gerekiyor. (DB_MARKET adında bir veri tabanı oluşturup aşağıdaki kodu direkt çalıştırırsanız tablolar başarılı bir şekilde oluşturualcaktır.)</h4>
 
 	USE [DB_MARKET]
 	GO
