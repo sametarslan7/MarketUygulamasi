@@ -81,6 +81,7 @@ namespace MarketUygulamasi
         {
             baglanti.Open();
             decimal genelToplam = 0;
+            decimal paraUstu=0;
             StringBuilder fis = new StringBuilder();
 
             fis.AppendLine("Alışveriş Fişi:");
@@ -106,6 +107,8 @@ namespace MarketUygulamasi
                 genelToplam += toplamTutar;
                 DateTime alisverisTarihi = DateTime.Now;
 
+                
+
                 // Bilgileri TBLALISVERIS tablosuna ekleyin
                 SqlCommand ekleKomut = new SqlCommand("INSERT INTO TBLALISVERIS (URUNAD, MARKAAD, URUNADET, TOPLAMTUTAR, ALISVERISTARIH) VALUES (@p1, @p2, @p3, @p4, @p5)", baglanti);
                 ekleKomut.Parameters.AddWithValue("@p1", urun.UrunAd);
@@ -123,6 +126,9 @@ namespace MarketUygulamasi
 
                 guncelleKomut.ExecuteNonQuery();
 
+                
+                paraUstu = Convert.ToDecimal(txtOdenenTutar.Text) - toplamTutar;
+
                 // Fiş bilgilerini oluşturun
                 fis.AppendLine($"{urun.UrunAd} - Adet: {urun.Adet}, Tutar: {toplamTutar:C2}");
             }
@@ -132,7 +138,7 @@ namespace MarketUygulamasi
             fis.AppendLine("--------------------------");
             fis.AppendLine($"Genel Toplam: {genelToplam:C2}");
             fis.AppendLine($"Tarih: {DateTime.Now}");
-
+            fis.AppendLine(($"Para Üstü : {paraUstu:C2}"));
             // Fişi mesaj kutusunda göster
             MessageBox.Show(fis.ToString(), "Alışveriş Fişi");
 

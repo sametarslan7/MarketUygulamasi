@@ -57,6 +57,8 @@
             groupBox2 = new GroupBox();
             lstSepet = new ListBox();
             btnSepeteEkle = new Button();
+            txtOdenenTutar = new TextBox();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -326,6 +328,8 @@
             // 
             groupBox2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(txtOdenenTutar);
             groupBox2.Controls.Add(lstSepet);
             groupBox2.Controls.Add(btnOde);
             groupBox2.ForeColor = Color.White;
@@ -343,7 +347,7 @@
             lstSepet.ItemHeight = 32;
             lstSepet.Location = new Point(54, 53);
             lstSepet.Name = "lstSepet";
-            lstSepet.Size = new Size(272, 196);
+            lstSepet.Size = new Size(272, 164);
             lstSepet.TabIndex = 17;
             // 
             // btnSepeteEkle
@@ -355,6 +359,23 @@
             btnSepeteEkle.Text = "Sepete Ekle";
             btnSepeteEkle.UseVisualStyleBackColor = true;
             btnSepeteEkle.Click += btnSepeteEkle_Click;
+            // 
+            // txtOdenenTutar
+            // 
+            txtOdenenTutar.Location = new Point(209, 234);
+            txtOdenenTutar.Name = "txtOdenenTutar";
+            txtOdenenTutar.Size = new Size(147, 39);
+            txtOdenenTutar.TabIndex = 48;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(51, 239);
+            label10.Name = "label10";
+            label10.Size = new Size(152, 30);
+            label10.TabIndex = 49;
+            label10.Text = "Ödenen Tutar :";
             // 
             // FrmAlisVeris
             // 
@@ -391,6 +412,7 @@
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -425,5 +447,7 @@
         private GroupBox groupBox2;
         private Button btnSepeteEkle;
         private ListBox lstSepet;
+        private Label label10;
+        private TextBox txtOdenenTutar;
     }
 }
