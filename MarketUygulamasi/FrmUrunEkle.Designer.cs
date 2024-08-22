@@ -358,7 +358,7 @@
             MinimizeBox = false;
             Name = "FrmUrunEkle";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmUrunEkle";
+            Text = "Ürün Ekle";
             Load += FrmUrunEkle_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);

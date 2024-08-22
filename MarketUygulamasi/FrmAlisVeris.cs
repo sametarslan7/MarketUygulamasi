@@ -107,7 +107,17 @@ namespace MarketUygulamasi
                 genelToplam += toplamTutar;
                 DateTime alisverisTarihi = DateTime.Now;
 
-                
+                paraUstu = Convert.ToDecimal(txtOdenenTutar.Text) - toplamTutar;
+
+                if (paraUstu<0)
+                {
+                    MessageBox.Show($"Verdiğiniz Para {paraUstu} TL eksik çıkıyor , ödeme işlemi yapılamadı.");
+                    sepet.Clear();
+                    groupBox2.Visible = false;
+                    txtOdenenTutar.Text = "";
+                    return;
+                    
+                }
 
                 // Bilgileri TBLALISVERIS tablosuna ekleyin
                 SqlCommand ekleKomut = new SqlCommand("INSERT INTO TBLALISVERIS (URUNAD, MARKAAD, URUNADET, TOPLAMTUTAR, ALISVERISTARIH) VALUES (@p1, @p2, @p3, @p4, @p5)", baglanti);
@@ -127,7 +137,7 @@ namespace MarketUygulamasi
                 guncelleKomut.ExecuteNonQuery();
 
                 
-                paraUstu = Convert.ToDecimal(txtOdenenTutar.Text) - toplamTutar;
+                
 
                 // Fiş bilgilerini oluşturun
                 fis.AppendLine($"{urun.UrunAd} - Adet: {urun.Adet}, Tutar: {toplamTutar:C2}");

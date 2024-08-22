@@ -458,7 +458,7 @@
             MinimizeBox = false;
             Name = "FrmUrunListesi";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmUrunListesi";
+            Text = "Ürünler";
             Load += FrmUrunListesi_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);

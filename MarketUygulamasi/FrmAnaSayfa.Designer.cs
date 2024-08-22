@@ -110,6 +110,7 @@
             btnCikis.Size = new Size(92, 98);
             btnCikis.TabIndex = 6;
             btnCikis.UseVisualStyleBackColor = false;
+            btnCikis.Click += btnCikis_Click;
             // 
             // label2
             // 

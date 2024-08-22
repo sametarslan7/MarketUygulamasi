@@ -252,7 +252,7 @@
             MinimizeBox = false;
             Name = "FrmMarkalar";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmMarkalar";
+            Text = "Markalar";
             Load += FrmMarkalar_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);

@@ -23,9 +23,14 @@ namespace MarketUygulamasi
 
         private void btnAlisVeris_Click(object sender, EventArgs e)
         {
-            FrmAlisVeris fr=new FrmAlisVeris();
+            FrmAlisVeris fr = new FrmAlisVeris();
             fr.Show();
-            this.Hide();    
+            this.Hide();
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

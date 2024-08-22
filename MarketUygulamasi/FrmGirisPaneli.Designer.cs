@@ -155,7 +155,7 @@
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmGirisPaneli";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmGirisPaneli";
+            Text = "Giriş Paneli";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -149,7 +149,7 @@
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmKullaniciKayitPaneli";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmKullaniciKayitPaneli";
+            Text = "Kullanıcı Kayıt Paneli";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
