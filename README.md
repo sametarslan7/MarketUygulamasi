@@ -4,7 +4,7 @@
 <h2> Uygulama Kullanım Kılavuzu </h2>
 <h3> -> Uygulamayı başlatınca direkt giriş sayfasıyla karşılaşacaksınız.Eğer sisteme kayıtlıysanız direkt kullanıcı adı ve şifre ile giriş yapabilirsiniz. </h3>
 
-![giris_foto](https://github.com/user-attachments/assets/cdded5a4-f790-4f0f-8590-11d4bfb8d1d2)
+![giris_foto](https://github.com/user-attachments/assets/eb6cd3e1-ea6a-4421-9c31-124486d9c865)
 
 <h4>     -> Eğer sisteme kayıtlı değilseniz <b>"Kayıt Ol"</b> butonuna tıklayarak Kullanıcı <b>Kayıt Paneline</b> gidebilir ve sonrasında sisteme kayıt olabilirsiniz.</h4>
 <h3> -> Uygulamaya giriş yaptıktan sonra Ana Sayfaya yönlendirileceksiniz.Burada <strong>"Ürünler"</strong> , <strong>"Markalar"</strong> ve <strong>"Alış Veriş"</strong> seçeneklerinden seçim yaparak istediğiniz sayfaya gidebilirsiniz.</h3>
