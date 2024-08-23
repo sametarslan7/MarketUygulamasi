@@ -99,6 +99,7 @@
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(189, 35);
             txtSifre.TabIndex = 5;
+            txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGirisYap
             // 

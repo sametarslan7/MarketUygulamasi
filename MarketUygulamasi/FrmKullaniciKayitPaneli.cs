@@ -26,18 +26,33 @@ namespace MarketUygulamasi
         {
             baglanti.Open();
 
-            SqlCommand komut = new SqlCommand("insert into TBLKULLANICI(KULLANICIAD,MAIL,SIFRE) values (@p1,@p2,@p3) ",baglanti);
-            komut.Parameters.AddWithValue("@p1",txtKullaniciAd.Text);
-            komut.Parameters.AddWithValue("@p2",txtMail.Text);
-            komut.Parameters.AddWithValue("@p3",txtSifre.Text);
+            SqlCommand komut_1 = new SqlCommand("select * from TBLKULLANICI where MAIL=@mail", baglanti);
+            komut_1.Parameters.AddWithValue("@mail",txtMail.Text);
+            SqlDataReader oku=komut_1.ExecuteReader();
 
-            komut.ExecuteNonQuery();
-                
-            baglanti.Close();
-            MessageBox.Show("Kayıt yapıldı . Lütfen giriş yapınız");
-            FrmGirisPaneli fr=new FrmGirisPaneli();
-            fr.Show();
-            this.Close();
+            if (oku.Read())
+            {
+                MessageBox.Show("Bu mail ile oluşturulmuş bir kayıt zaten var , farklı bir mail ile deneyin.");
+                baglanti.Close();
+                txtMail.Text = "";
+                txtSifre.Text = "";
+                return;
+            }
+            oku.Close();
+                SqlCommand komut = new SqlCommand("insert into TBLKULLANICI(KULLANICIAD,MAIL,SIFRE) values (@p1,@p2,@p3) ", baglanti);
+                komut.Parameters.AddWithValue("@p1", txtKullaniciAd.Text);
+                komut.Parameters.AddWithValue("@p2", txtMail.Text);
+                komut.Parameters.AddWithValue("@p3", txtSifre.Text);
+
+                komut.ExecuteNonQuery();
+
+                baglanti.Close();
+                MessageBox.Show("Kayıt yapıldı . Lütfen giriş yapınız");
+                FrmGirisPaneli fr = new FrmGirisPaneli();
+                fr.Show();
+                this.Close();
+            
+ 
         }
     }
 }
